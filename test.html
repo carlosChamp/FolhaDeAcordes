@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .posicaoDedo {
+       font: italic bold 40px serif;
+       fill: red;
+
+     }     
+     .primeiraCasa{
+        font: bold 20px serif;
+     }
+   </style>
+<body>
+    
+</body>
+<script src="AppAcorde.js"></script>
+<script>
+    var acordes = [{
+    "Nome":"Bbm",
+    "CasaInicial":1,
+    "Dedos":[
+        { 
+            "Numero":1,
+            "Corda": 1,
+            "Casa": 1
+        },
+        
+        { 
+            "Numero":1,
+            "Corda": 1,
+            "Casa": 2
+        },
+        
+        { 
+            "Numero":1,
+            "Corda": 1,
+            "Casa": 3
+        },
+        
+        { 
+            "Numero":1,
+            "Corda": 1,
+            "Casa": 4
+        },
+        
+        { 
+            "Numero":1,
+            "Corda": 1,
+            "Casa": 5
+        },
+        
+        { 
+            "Numero":2,
+            "Corda": 2,
+            "Casa": 1
+        },        
+        { 
+            "Numero":2,
+            "Corda": 2,
+            "Casa": 2
+        },
+        
+        { 
+            "Numero":2,
+            "Corda": 2,
+            "Casa": 3
+        },
+        
+        { 
+            "Numero":2,
+            "Corda": 2,
+            "Casa": 4
+        },
+        
+        { 
+            "Numero":2,
+            "Corda": 2,
+            "Casa": 5
+        },
+
+        
+        
+        { 
+            "Numero":3,
+            "Corda": 3,
+            "Casa": 1
+        },        
+        { 
+            "Numero":3,
+            "Corda": 3,
+            "Casa": 2
+        },
+        
+        { 
+            "Numero":3,
+            "Corda": 3,
+            "Casa": 3
+        },
+        
+        { 
+            "Numero":3,
+            "Corda": 3,
+            "Casa": 4
+        },
+        
+        { 
+            "Numero":3,
+            "Corda": 3,
+            "Casa": 5
+        },
+        
+        
+        { 
+            "Numero":4,
+            "Corda": 4,
+            "Casa": 1
+        },        
+        { 
+            "Numero":4,
+            "Corda": 4,
+            "Casa": 2
+        },
+        
+        { 
+            "Numero":4,
+            "Corda": 4,
+            "Casa": 3
+        },
+        
+        { 
+            "Numero":4,
+            "Corda": 4,
+            "Casa": 4
+        },
+        
+        { 
+            "Numero":4,
+            "Corda": 4,
+            "Casa": 5
+        },
+        
+        
+        { 
+            "Numero":5,
+            "Corda": 5,
+            "Casa": 1
+        },        
+        { 
+            "Numero":5,
+            "Corda": 5,
+            "Casa": 2
+        },
+        
+        { 
+            "Numero":5,
+            "Corda": 5,
+            "Casa": 3
+        },
+        
+        { 
+            "Numero":5,
+            "Corda": 5,
+            "Casa": 4
+        },
+        
+        { 
+            "Numero":5,
+            "Corda": 5,
+            "Casa": 5
+        },
+        
+        
+        { 
+            "Numero":6,
+            "Corda": 6,
+            "Casa": 1
+        },        
+        { 
+            "Numero":6,
+            "Corda": 6,
+            "Casa": 2
+        },
+        
+        { 
+            "Numero":6,
+            "Corda": 6,
+            "Casa": 3
+        },
+        
+        { 
+            "Numero":6,
+            "Corda": 6,
+            "Casa": 4
+        },
+        
+        { 
+            "Numero":6,
+            "Corda": 6,
+            "Casa": 5
+        }
+
+    ]
+
+},
+{
+    "Nome":"F",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 6,
+            "Casa": 1
+        }
+    ]
+
+},
+{
+    "Nome":"F",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 6,
+            "Casa": 2
+        }
+    ]
+
+},
+{
+    "Nome":"F",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 6,
+            "Casa": 3
+        }
+    ]
+
+},
+{
+    "Nome":"F",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 6,
+            "Casa": 4
+        }
+    ]
+
+},
+{
+    "Nome":"F",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 6,
+            "Casa": 5
+        }
+    ]
+
+},
+
+{
+    "Nome":"B",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 5,
+            "Casa": 1
+        }
+    ]
+
+},
+{
+    "Nome":"B",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 5,
+            "Casa": 2
+        }
+    ]
+
+},
+{
+    "Nome":"B",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 5,
+            "Casa": 3
+        }
+    ]
+
+},
+{
+    "Nome":"B",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 5,
+            "Casa": 4
+        }
+    ]
+
+},
+{
+    "Nome":"B",
+    "CasaInicial":1,
+    "Dedos":[
+       
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 5,
+            "Casa": 5
+        }
+    ]
+
+},
+];
+
+
+
+    var doc = document.body;
+    for(let acorde of acordes){
+        const svgElement = criaSvgPeloAcorde(acorde);
+        doc.appendChild(svgElement);
+    }
+</script>
+</html>

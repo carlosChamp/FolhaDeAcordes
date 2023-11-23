@@ -1,0 +1,33 @@
+{
+    "Id":1,
+    "Nome":"Bbm",
+    "CasaInicial":1,
+    "Dedos":[
+        { 
+            "Numero":1,
+            "Pestana": true,
+            "Corda": 5,
+            "Casa": 1
+        },
+        
+        { 
+            "Numero":2,
+            "Corda": 2,
+            "Casa": 2
+        },
+        
+        { 
+            "Numero":3,
+            "Corda": 4,
+            "Casa": 3
+        },
+        
+        { 
+            "Numero":4,
+            "Corda": 3,
+            "Casa": 3
+        }
+
+    ]
+
+}
