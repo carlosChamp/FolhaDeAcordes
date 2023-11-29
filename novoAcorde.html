@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="acorde.css" />
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <style>
+    svg {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <main class="flex wrap">
+      <section id="divFormAcorde">
+        <h1>Cadastro de acorde</h1>
+        <form id="frmCadAcorde">
+          <!-- <label for="txtId">Id acorde:</label> -->
+          <input
+            type="text"
+            id="txtId"
+            disabled
+            placeholder="Id do acorde"
+          /><br />
+          <!-- <label for="txtNome">Nome acorde:</label> -->
+          <input type="text" id="txtNome" placeholder="Nome do acorde" /><br />
+          <!-- <label for="txtCasaInicial">Casa Inicial:</label> -->
+          <input type="text" id="txtCasaInicial" placeholder="Casa inicial" />
+          <table>
+            <tr>
+              <th>Dedo</th>
+              <th>Casa</th>
+              <th>Corda</th>
+              <th>Pestana</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><input type="number" id="txtCasa1" min="0" max="21" /></td>
+              <td><input type="number" id="txtCorda1" min="0" max="6" /></td>
+              <td><input type="checkbox" id="checkPestana" /></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="number" id="txtCasa2" min="0" max="21" /></td>
+              <td><input type="number" id="txtCorda2" min="0" max="6" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="number" id="txtCasa3" min="0" max="21" /></td>
+              <td><input type="number" id="txtCorda3" min="0" max="6" /></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><input type="number" id="txtCasa4" min="0" max="21" /></td>
+              <td><input type="number" id="txtCorda4" min="0" max="6" /></td>
+              <td></td>
+            </tr>
+          </table>
+          <button type="button" id="btnCadastrar">Cadastrar</button>
+        </form>
+        <table id="gridAcordesCadastrados">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nome</th>
+              <th>Pestana?</th>
+              <th>-</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button type="button" id="btnGerarJson">Gerar Json</button>
+      </section>
+      <section id="acordeLiveView">
+        <div id="acordeCadastrado"></div>
+      </section>
+    </main>
+  </body>
+  <script type="module" src="AppNovoAcorde.js"></script>
+</html>

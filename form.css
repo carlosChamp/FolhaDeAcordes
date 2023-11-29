@@ -1,0 +1,107 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #064834;
+}
+#divFormAcorde {
+  background-color: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 1.5rem 1rem;
+  box-shadow: 8px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-height: calc(100% - 1.5rem);
+}
+
+#frmCadAcorde {
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+#frmCadAcorde input {
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+  letter-spacing: 0.11em;
+}
+
+#frmCadAcorde input::placeholder {
+  color: #797a9e;
+  font-size: 16px;
+}
+
+#frmCadAcorde input:focus {
+  outline: 0;
+  border-bottom: 1px solid black;
+  transition: 0.6s all ease;
+}
+
+#frmCadAcorde input[type="number"] {
+  width: 80px;
+}
+
+#divFormAcorde table {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+
+#divFormAcorde table td,
+#divFormAcorde table th {
+  padding: 0.3rem;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  text-align: center;
+}
+
+#divFormAcorde table td:last-child,
+#divFormAcorde table th:last-child {
+  border-right: 0;
+}
+
+#divFormAcorde table tr:last-child td {
+  border-bottom: 0;
+}
+
+button {
+  width: 100%;
+  height: 30px;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  z-index: 3;
+  background: #129d72;
+  cursor: pointer;
+  border-radius: 0;
+  border: 0;
+}
+
+#gridAcordesCadastrados {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#acordeCadastrado {
+  max-width: 300px;
+  margin: 0 auto;
+  box-shadow: 8px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+#acordeLiveView {
+  flex-grow: 1;
+  place-content: center;
+  justify-content: center;
+  place-items: center;
+  justify-content: center;
+  display: flex;
+}
+

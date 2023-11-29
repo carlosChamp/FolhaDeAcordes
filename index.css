@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+button {
+  background-color: #ffffff;
+  border: 1px solid rgb(209, 213, 219);
+  /* border-radius: 0.5rem; */
+  color: #111827;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #f9fafb;
+}
+
+button:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.1);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+section {
+  text-align: center;
+}
+
+#acordesDisponiveis {
+  width: 90%;
+  place-content: center;
+  margin: 1.5rem auto 0 auto;
+  column-gap: 15px;
+  row-gap: 15px;
+}
+
+#acordesImpressao {
+  column-gap: 15px;
+  row-gap: 15px;
+  width: min-content;
+}
+
+.gridItem {
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  background: white;
+  box-shadow: 6px 6px 8px -1px rgba(0, 0, 0, 0.1);
+  width: calc(100% / 12);
+  min-width: 125px;
+}
+
+.gridItemSmall {
+  width: calc(100% / 20) !important;
+  min-width: 60px !important;
+}
+
+.gridItem svg {
+  width: 100%;
+}
+
+.container-input {
+  position: relative;
+}
+
+.input {
+  width: 90%;
+  margin: 0.5rem auto;
+  padding: 10px 0px 10px 40px;
+  font-size: 28px;
+  /* border-radius: 9999px; */
+  border: 0;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  /* width: 250px; */
+}
+
+.selecionado {
+  /* border: 3px red solid; */
+  position: relative;
+  background-color: #c3dbfe;
+}
+
+dialog {
+  border: 0;
+  border-radius: 15px;
+}
+
+::backdrop {
+  background-color: darkgray;
+  opacity: 0.75;
+}

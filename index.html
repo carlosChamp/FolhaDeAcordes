@@ -1,103 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Folha de Acorde</title>
-</head>
-<style>
-    @media all {
-     
-        .grid
-        {   
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-            /* width: 800px; */
-            
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="acorde.css" />
+  </head>
 
-        .item{
-            min-height: 100px;
-            min-width: 100px;
-            border:solid 1px red;
-            
-        }  
-        img{
-            width: 100%;
-        } 
-    }
-
-</style>
-<body>
-    <main class="grid">
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
+  <body>
+    <main>
+      <section class="row" hidden>
+        <h1>Acordes:</h1>
+        <h2>Selecionados:</h2>
+        <div>
+          <div>
+            <ul class="flex" id="acordesSelecionados"></ul>
+          </div>
         </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
+      </section>
+      <section>
+        <h1>Selecione os acordes:</h1>
+        <div class="container-input">
+          <input
+            id="txtPesquisa"
+            type="text"
+            placeholder="🔍︎ Pesquisar"
+            name="text"
+            class="input"
+          /><br />
+          <button id="btnPrint">Imprimir</button>
         </div>
 
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
+        <div>
+          <ul class="flex wrap" id="acordesDisponiveis"></ul>
         </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
-        <div class="item">
-            <img src = "acorde.svg" alt="My Happy SVG"/>
-        </div>
+      </section>
     </main>
-</body>
-<script src="AppAcorde.js"></script>
-<script></script>
+    <dialog id="dlgImpressao">
+      <h2>Você está imprimindo esses acordes:</h2>
+      <form method="dialog">
+        <ul class="flex" id="acordesImpressao"></ul>
+        <label>Cor de destaque:</label>
+        
+        <select id="cmbCor">
+          <option value="red">Vermelho</option>
+          <option value="green">Verde</option>
+          <option value="#ff7700">Roxo</option>
+          <option value="#ff7700">Laranja</option>
+          <option value="black">Preto</option>
+        </select><br> 
+        <button value="confirm">Imprimir</button>
+        <button value="cancel">Cancelar</button>
+      </form>
+    </dialog>
+  </body>
+  <script type="module" src="App.js"></script>
 </html>
