@@ -79,11 +79,18 @@ button {
   font-size: 20px;
   font-weight: 400;
   position: relative;
-  z-index: 3;
+  /* z-index: 3; */
   background: #129d72;
   cursor: pointer;
   border-radius: 0;
   border: 0;
+}
+#btnVisualizar {
+  display: none;
+  margin-bottom: 15px;
+  color: black;
+  background: white;
+  border: 2px solid black;
 }
 
 #gridAcordesCadastrados {
@@ -106,7 +113,7 @@ button {
   justify-content: center;
   display: flex;
 }
-.tituloLista{
+.tituloLista {
   font-size: 18pt;
 }
 #listAcordesCadastrados {
@@ -130,12 +137,36 @@ button {
   text-decoration: none;
 }
 
-
-#listAcordesCadastrados li a img{
+#listAcordesCadastrados li a img {
   width: 24px;
   height: 24px;
 }
 
 #listAcordesCadastrados li a:hover {
   color: #129d72;
+}
+
+@media only screen and (max-width: 780px) {
+  #divFormAcorde {
+    width: 100%;
+    max-width: 100%;
+    max-height: max-content;
+  }
+
+  #listAcordesCadastrados {
+    max-height: 300px;
+  }
+
+  #btnVisualizar {
+    display: block;
+  }
+
+  #acordeLiveView {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(169, 169, 169, 0.75);
+  }
 }

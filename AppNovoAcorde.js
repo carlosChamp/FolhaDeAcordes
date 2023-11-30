@@ -25,6 +25,7 @@ const gridAcordesCadastrados = document.querySelector(
 );
 const btnCadastrar = document.getElementById("btnCadastrar");
 const btnGerarJson = document.getElementById("btnGerarJson");
+const acordeLiveView = document.querySelector("#acordeLiveView")
 
 let listaAcordesMemoria = await AcordesData.AcordesCadastrados;
 let ids = listaAcordesMemoria.map((object) => {
@@ -116,22 +117,7 @@ function adicionaLinhaGridAcorde(acorde) {
     acorde.Id,
     acorde.Dedos.some((x) => x.Pestana)
   );
-  // let cellId = document.createElement("td");
-  // cellId.innerHTML = acorde.Id;
-  // linha.appendChild(cellId);
-
-  // let cellNome = document.createElement("td");
-  // cellNome.innerHTML = acorde.Nome;
-  // linha.appendChild(cellNome);
-
-  // let cellPestana = document.createElement("td");
-  // cellPestana.innerHTML = acorde.Dedos.some((x) => x.Pestana) ? "Sim" : "Não";
-  // linha.appendChild(cellPestana);
-
-  // let cellComando = document.createElement("td");
-  // cellComando.innerHTML = `<a href="#" onclick="copiarAcorde(${acorde.Id})">Copiar</a> - <a href="#" onclick="editarAcorde(${acorde.Id})">Editar</a> - <a href="#" onclick="apagarAcorde(${acorde.Id})">Apagar</a>`;
-  // linha.appendChild(cellComando);
-
+  
   gridAcordesCadastrados.appendChild(listItem);
 }
 
@@ -201,6 +187,10 @@ function preencherCampos(acorde) {
   }
 }
 
+function exibeAcordeLiveView(){
+  acordeLiveView.style.display = "flex";
+}
+
 btnCadastrar.addEventListener("click", () => {
   let obj = criarObjetoAcorde();
   if (Number(obj.Id) == 0) {
@@ -220,6 +210,14 @@ btnGerarJson.addEventListener("click", () => {
   let json = JSON.stringify(listaAcordesMemoria);
   download("acordes.json", json);
 });
+
+
+acordeLiveView.addEventListener("click", (e) => {
+  if(window.innerWidth < 780)
+    acordeLiveView.style.display = "none";
+})
+
+btnVisualizar.addEventListener("click", exibeAcordeLiveView)
 
 const inputs = document.querySelectorAll("#frmCadAcorde input");
 inputs.forEach((input) => input.addEventListener("change", desenharAcorde));
