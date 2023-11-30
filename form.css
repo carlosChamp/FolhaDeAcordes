@@ -11,7 +11,9 @@ h5 {
   max-width: 450px;
   padding: 1.5rem 1rem;
   box-shadow: 8px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  max-height: calc(100% - 1.5rem);
+  max-height: calc(100% - 3rem);
+  display: flex;
+  flex-direction: column;
 }
 
 #frmCadAcorde {
@@ -104,4 +106,36 @@ button {
   justify-content: center;
   display: flex;
 }
+.tituloLista{
+  font-size: 18pt;
+}
+#listAcordesCadastrados {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
 
+#listAcordesCadastrados li {
+  width: 100%;
+  border-bottom: 1px solid darkgray;
+  font-size: 14pt;
+  padding-top: 5px;
+}
+
+#listAcordesCadastrados li a {
+  text-decoration: none;
+}
+
+
+#listAcordesCadastrados li a img{
+  width: 24px;
+  height: 24px;
+}
+
+#listAcordesCadastrados li a:hover {
+  color: #129d72;
+}

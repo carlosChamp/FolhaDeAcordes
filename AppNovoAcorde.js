@@ -1,12 +1,27 @@
 import { SvgAcorde } from "./modules/SvgAcorde.js";
 import { AcordesData } from "./modules/AcordesData.js";
 
+function criaItemLista(nome, id, temPestana) {
+  return `${id} - ${nome} (${temPestana ? "Com" : "Sem"} pestana)
+          <div class="float-right float-right__text-height">
+            <a href="#" onclick="copiarAcorde(${id})">
+              <img src="imgs/copy.svg" />
+            </a>
+            <a href="#" onclick="editarAcorde(${id})">
+              <img src="imgs/edit.svg" />
+            </a>
+            <a href="#" onclick="apagarAcorde(${id})">
+              <img src="imgs/delete.svg" />
+            </a>
+          </div>`;
+}
+
 const txtId = document.getElementById("txtId");
 const txtNome = document.getElementById("txtNome");
 const txtCasaInicial = document.getElementById("txtCasaInicial");
 const checkPestana = document.getElementById("checkPestana");
 const gridAcordesCadastrados = document.querySelector(
-  "#gridAcordesCadastrados > tbody"
+  "#listAcordesCadastrados"
 );
 const btnCadastrar = document.getElementById("btnCadastrar");
 const btnGerarJson = document.getElementById("btnGerarJson");
@@ -49,7 +64,7 @@ function setInfoDedoAcorde(Dedo) {
   if (numeroDedo == 1) checkPestana.checked = Dedo.Pestana;
   document.getElementById("txtCorda" + numeroDedo).value = Dedo.Corda;
   document.getElementById("txtCasa" + numeroDedo).value = Dedo.Casa;
-  desenhaAcorde();
+  desenharAcorde();
 }
 
 function criarObjetoAcorde() {
@@ -73,7 +88,7 @@ function criarObjetoAcorde() {
   return acorde;
 }
 
-function desenhaAcorde() {
+function desenharAcorde() {
   const divAcorde = document.getElementById("acordeCadastrado");
   if (divAcorde.childNodes.length > 0)
     divAcorde.removeChild(divAcorde.childNodes[0]);
@@ -95,24 +110,29 @@ function carregarAcordesNaTela() {
 }
 
 function adicionaLinhaGridAcorde(acorde) {
-  let linha = document.createElement("tr");
-  let cellId = document.createElement("td");
-  cellId.innerHTML = acorde.Id;
-  linha.appendChild(cellId);
+  let listItem = document.createElement("li");
+  listItem.innerHTML = criaItemLista(
+    acorde.Nome,
+    acorde.Id,
+    acorde.Dedos.some((x) => x.Pestana)
+  );
+  // let cellId = document.createElement("td");
+  // cellId.innerHTML = acorde.Id;
+  // linha.appendChild(cellId);
 
-  let cellNome = document.createElement("td");
-  cellNome.innerHTML = acorde.Nome;
-  linha.appendChild(cellNome);
+  // let cellNome = document.createElement("td");
+  // cellNome.innerHTML = acorde.Nome;
+  // linha.appendChild(cellNome);
 
-  let cellPestana = document.createElement("td");
-  cellPestana.innerHTML = acorde.Dedos.some((x) => x.Pestana) ? "Sim" : "Não";
-  linha.appendChild(cellPestana);
+  // let cellPestana = document.createElement("td");
+  // cellPestana.innerHTML = acorde.Dedos.some((x) => x.Pestana) ? "Sim" : "Não";
+  // linha.appendChild(cellPestana);
 
-  let cellComando = document.createElement("td");
-  cellComando.innerHTML = `<a href="#" onclick="copiarAcorde(${acorde.Id})">Copiar</a> - <a href="#" onclick="editarAcorde(${acorde.Id})">Editar</a> - <a href="#" onclick="apagarAcorde(${acorde.Id})">Apagar</a>`;
-  linha.appendChild(cellComando);
+  // let cellComando = document.createElement("td");
+  // cellComando.innerHTML = `<a href="#" onclick="copiarAcorde(${acorde.Id})">Copiar</a> - <a href="#" onclick="editarAcorde(${acorde.Id})">Editar</a> - <a href="#" onclick="apagarAcorde(${acorde.Id})">Apagar</a>`;
+  // linha.appendChild(cellComando);
 
-  gridAcordesCadastrados.appendChild(linha);
+  gridAcordesCadastrados.appendChild(listItem);
 }
 
 function download(filename, text) {
@@ -141,6 +161,7 @@ function limparCampos() {
     document.getElementById("txtCorda" + i).value = "";
     document.getElementById("txtCasa" + i).value = "";
   }
+  desenharAcorde();
 }
 
 window.editarAcorde = function (id) {
@@ -201,6 +222,6 @@ btnGerarJson.addEventListener("click", () => {
 });
 
 const inputs = document.querySelectorAll("#frmCadAcorde input");
-inputs.forEach((input) => input.addEventListener("change", desenhaAcorde));
+inputs.forEach((input) => input.addEventListener("change", desenharAcorde));
 carregarAcordesNaTela();
-desenhaAcorde();
+desenharAcorde();
