@@ -61,6 +61,7 @@ function montarGridAcordesImpressao(){
 
 function onClickToggleSelecao(e) {
   let idAcorde = parseInt(e.currentTarget.getAttribute("data-idAcorde"));
+  console.log(idAcorde);
   if (acordesSelecionados.includes(idAcorde))
     acordesSelecionados = acordesSelecionados.filter((x) => x != idAcorde);
   else 

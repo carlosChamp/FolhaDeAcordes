@@ -4,7 +4,6 @@
 button {
   background-color: #ffffff;
   border: 1px solid rgb(209, 213, 219);
-  /* border-radius: 0.5rem; */
   color: #111827;
   font-size: 0.875rem;
   font-weight: 600;
@@ -81,8 +80,7 @@ section {
   width: 90%;
   margin: 0.5rem auto;
   padding: 10px 0px 10px 40px;
-  font-size: 28px;
-  /* border-radius: 9999px; */
+  font-size: 1.75rem;
   border: 0;
   transition: all 0.2s ease-in-out;
   outline: none;
@@ -98,11 +96,9 @@ section {
 
 .input:focus {
   opacity: 1;
-  /* width: 250px; */
 }
 
 .selecionado {
-  /* border: 3px red solid; */
   position: relative;
   background-color: #c3dbfe;
 }

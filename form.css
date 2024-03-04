@@ -79,11 +79,11 @@ button {
   font-size: 20px;
   font-weight: 400;
   position: relative;
-  /* z-index: 3; */
   background: #129d72;
   cursor: pointer;
   border-radius: 0;
   border: 0;
+  padding: .25rem 0 .25rem 0;
 }
 #btnVisualizar {
   display: none;
@@ -131,6 +131,10 @@ button {
   border-bottom: 1px solid darkgray;
   font-size: 14pt;
   padding-top: 5px;
+  display: flex;
+}
+.grid-actions{
+  margin-left: auto;
 }
 
 #listAcordesCadastrados li a {

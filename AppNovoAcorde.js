@@ -3,7 +3,7 @@ import { AcordesData } from "./modules/AcordesData.js";
 
 function criaItemLista(nome, id, temPestana) {
   return `${id} - ${nome} (${temPestana ? "Com" : "Sem"} pestana)
-          <div class="float-right float-right__text-height">
+          <div class='grid-actions'>
             <a href="#" onclick="copiarAcorde(${id})">
               <img src="imgs/copy.svg" />
             </a>
@@ -71,7 +71,7 @@ function setInfoDedoAcorde(Dedo) {
 function criarObjetoAcorde() {
   let casaInicial = 1;
   if (txtCasaInicial.value != "") casaInicial = parseInt(txtCasaInicial.value);
-  let idAcorde = txtId.value == "" ? 0 : txtId.value;
+  let idAcorde = txtId.value == "" ? 0 : Number(txtId.value);
 
   let acorde = {
     Id: idAcorde,

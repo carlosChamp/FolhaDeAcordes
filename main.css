@@ -66,17 +66,3 @@ ul{
 .wrap {
   flex-wrap: wrap;
 }
-
-.col50 {
-  width: calc(50% - 30px);
-}
-
-.col100{
-    width: 100%;
-}
-.float-right{
-  float:right;
-}
-.float-right__text-height{
-  float:right;
-}
