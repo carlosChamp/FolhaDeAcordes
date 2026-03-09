@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copiar Acorde</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="acorde.css" />
+  </head>
+
+  <style>
+    .page {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      align-items: flex-start;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      min-width: 220px;
+      flex-shrink: 0;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .control-group > label:first-child {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    #lblAcordeNome {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    select {
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      font-family: inherit;
+      font-size: 1rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    .cordas-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .cordas-row label {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-weight: 400;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .cordas-row input[type="checkbox"] {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+    }
+
+    #btnCopiar {
+      margin-top: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #111827;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    }
+
+    #btnCopiar:hover {
+      background: #374151;
+    }
+
+    #msgCopiado {
+      color: green;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    /* Chord grid */
+    #acordesList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .acorde-item {
+      width: 130px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 6px 6px 8px -1px rgba(0, 0, 0, 0.1);
+      transition: border-color 0.15s;
+    }
+
+    .acorde-item:hover {
+      border-color: #9ca3af;
+    }
+
+    .acorde-item.selected {
+      border-color: #111827;
+      box-shadow: 0 0 0 2px #111827;
+    }
+
+    .acorde-item svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+
+  <body>
+    <main>
+      <h1>Copiar Acorde</h1>
+      <div class="page">
+
+        <div class="controls">
+
+          <div class="control-group">
+            <label>Acorde selecionado:</label>
+            <span id="lblAcordeNome">—</span>
+          </div>
+
+          <div class="control-group">
+            <label for="cmbPadrao">Padrão (variação):</label>
+            <select id="cmbPadrao"></select>
+          </div>
+
+          <div class="control-group">
+            <label for="cmbBaixo">Corda do Baixo:</label>
+            <select id="cmbBaixo">
+              <option value="">Nenhuma</option>
+              <option value="6">6ª corda (Baixo)</option>
+              <option value="5">5ª corda</option>
+              <option value="4">4ª corda</option>
+              <option value="3">3ª corda</option>
+              <option value="2">2ª corda</option>
+              <option value="1">1ª corda (Aguda)</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label>Cordas puxadas:</label>
+            <div class="cordas-row">
+              <label><input type="checkbox" name="corda" value="6" checked> 6ª</label>
+              <label><input type="checkbox" name="corda" value="5" checked> 5ª</label>
+              <label><input type="checkbox" name="corda" value="4" checked> 4ª</label>
+              <label><input type="checkbox" name="corda" value="3" checked> 3ª</label>
+              <label><input type="checkbox" name="corda" value="2" checked> 2ª</label>
+              <label><input type="checkbox" name="corda" value="1" checked> 1ª</label>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="cmbCor">Cor de destaque:</label>
+            <select id="cmbCor">
+              <option value="red">Vermelho</option>
+              <option value="green">Verde</option>
+              <option value="#7700ff">Roxo</option>
+              <option value="#ff7700">Laranja</option>
+              <option value="black">Preto</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="cmbEscala">Escala:</label>
+            <select name="cmbEscala" id="cmbEscala">
+                <option value="0.3">30%</option>
+                <option value="0.38">38%</option>
+                <option value="0.4" selected>40%</option>
+                <option value="0.5">50%</option>
+                <option value="0.6">60%</option>
+                <option value="0.7">70%</option>
+                <option value="0.8">80%</option>
+                <option value="0.9">90%</option>
+                <option value="1">100%</option>
+                <option value="2">200%</option>
+                <option value="3">300%</option>
+            </select>
+          </div>
+          <button id="btnCopiar">📋 Copiar como Imagem</button>
+          <span id="msgCopiado">✓ Copiado!</span>
+
+        </div>
+
+        <div id="acordesList"></div>
+
+      </div>
+    </main>
+  </body>
+  <script type="module" src="AppCopy.js"></script>
+</html>

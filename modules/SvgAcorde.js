@@ -42,6 +42,8 @@ const CHORD_MODEL = `
 `;
 
 export class SvgAcorde {
+  static _desenhaPolegar = false;
+  
   static criaElementoSVGComPropriedades(elemento, props) {
     var elemento = document.createElementNS(
       "http://www.w3.org/2000/svg",
@@ -97,6 +99,18 @@ export class SvgAcorde {
       });
       dedoAcorde.innerHTML = dedoNoBraco.Numero;
       svg.appendChild(dedoAcorde); //adicionar dedo no braco
+    }
+    if (chord.CordaBaixo && this._desenhaPolegar) {
+      const cordaBaixo = SvgAcorde.criaElementoSVGComPropriedades("text", {
+        x: POSICAO_CORDAS[chord.CordaBaixo]+5,
+        y: 494,
+        r: 8,
+        fill: "currentColor",
+        rotate: 270,
+        class: "posicaoDedo",
+      });
+      cordaBaixo.innerHTML = "P";
+      svg.appendChild(cordaBaixo);
     }
   }
 }

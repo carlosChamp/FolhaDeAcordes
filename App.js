@@ -7,6 +7,7 @@ let acordesSelecionados = [];
 
 const txtPesquisa = document.getElementById("txtPesquisa");
 const btnPrint = document.getElementById("btnPrint");
+const btnCopiar = document.getElementById("btnCopiar");
 const dlgImpressao = document.getElementById("dlgImpressao");
 const cmbCor = document.getElementById("cmbCor");
 const gridImpressao = document.getElementById("acordesImpressao");
@@ -96,6 +97,11 @@ document
 
 
 btnPrint.addEventListener("click", openPrintDialog);
+
+btnCopiar.addEventListener("click", () => {
+  const ids = acordesSelecionados.join(",");
+  window.open(`copy.html?ids=${ids}&cor=${encodeURIComponent(cmbCor.value)}`, "_blank");
+});
 
 dlgImpressao.addEventListener("close", imprimirAcordes)
 
